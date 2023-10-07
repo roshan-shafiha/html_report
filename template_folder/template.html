@@ -1,0 +1,87 @@
+
+<!DOCTYPE html> 
+<html><body>
+    <head> 
+        <title>{{page_title_text}}</title>
+    </head>
+    <div class="top_header">
+        <h2>Report for project</h2>
+
+    </div>
+    <style>
+        .top_header h2 {
+          line-height: 0.5;
+          text-align: center;
+          color: hwb(0 39% 61% / 0.858);
+        }
+        .top_header {
+          padding-bottom: 70px;
+
+        }
+
+        body {
+            margin: 25px 50px 25px; /* apply marginal space top right/left and bottom */
+        }
+
+        .table-style {
+            width: 80%;
+            aspect-ratio: 3/1;
+            padding: 0px 0;
+            margin: auto;
+            border: solid black 2px;
+            width:100%;
+            text-align:center;
+            font-size:16px;
+            overflow-x: scroll;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+
+        }
+
+        table, th, td {
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+
+
+    </style>
+    <header>
+        <h1>{{pipeline}}</h1>
+        <h2>{{content}}</h2>
+        <h3 align="left"><span style="color: hwb(38 0% 11% / 0.858)">1 Introduction </span> </h3>                                                             
+        <h4 align="left"><span style="color: hwb(38 0% 11% / 0.858)">{{content_1}} </span></h4>
+        <h4 align="left"><span style="color: hwb(38 0% 11% / 0.858)">{{content_2}}</span></h4>
+        <h4 align="left"><span style="color: hwb(38 0% 11% / 0.858)">{{content_3}}</span></h4>
+    </header>
+    <!-- publication section -->
+    <section>
+        <h3 align="left">1 Introduction </h3>
+        <h3 align="left">{{content_1}}</h3>
+        <p align="left"> 
+            content on the respective headers could be added here.
+        </p>
+    </section>
+    <!-- Experimental setup -->
+    <section>
+        <h3 align="left"> {{content_2}}</h3>
+        <p align="left">
+            preprocessing 
+        </p>
+        <p align="left"> 
+            material and method 
+        </p>
+    </section>
+    <!-- Result -->
+    <section>
+        <h3 align="left">2 Result</h3>
+        <h3 align="left">abundance table</h3>
+        <p align="left">
+            <strong>:</strong>
+                <div class="table-style">
+                    {{otu_table.to_html()}}
+                </div>
+        </p>
+    </section>
+
+
+</body></html>
