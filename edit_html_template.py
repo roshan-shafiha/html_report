@@ -11,12 +11,12 @@ env = Environment(loader=FileSystemLoader('template_format'))
 # Load the template file
 template = env.get_template('template.html')
 
-# 4. Render the template with variables
+# Render the template with variables
 html = template.render(page_title_text='Report',
                        content_1='Content 1',
                        content_2= 'Content 2',
                        otu_table=OTU)
 
-# 5. Write the template to an HTML file
+# Write the template to an HTML file
 with open('html_report_output.html', 'w') as f:
     f.write(html)
